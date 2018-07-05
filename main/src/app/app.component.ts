@@ -10,7 +10,8 @@ export class AppComponent implements OnInit {
 
     navItems: any[] = [
         { name: 'Home', route: 'home' },
-        { name: 'Page', route: 'page' }
+        { name: 'Page', route: 'page' },
+        { name: 'Form', route: 'form' }
     ];
 
     constructor(public title: Title) { }
