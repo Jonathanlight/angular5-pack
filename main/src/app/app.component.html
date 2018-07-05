@@ -1,0 +1,76 @@
+<md-sidenav-container class="app-root" fullscreen>
+
+    <md-sidenav #start mode="over">
+        <md-nav-list>
+            <a *ngFor="let navItem of navItems" md-list-item routerLinkActive="active-link" (click)="start.close()" [routerLink]="[navItem.route]">
+                {{ navItem.name }}
+            </a>
+        </md-nav-list>
+    </md-sidenav>
+
+    <div>
+        <md-toolbar color="primary" class="mat-elevation-z6">
+            <button md-icon-button (click)="start.open()">
+                <md-icon>menu</md-icon>
+            </button>
+            <div class="app-toolbar">
+                <h1>{{ title.getTitle() }}</h1>
+
+                <span class="fill-remaining-space"></span>
+                <div class="menu-section">
+                    <button md-icon-button [mdMenuTriggerFor]="posXMenu" aria-label="Open x-positioned menu">
+                        <md-icon>more_vert</md-icon>
+                    </button>
+
+                    <md-menu xPosition="before" #posXMenu="mdMenu" class="before">
+                        <a href="https://github.com/robisim74/angular-material-template" md-menu-item>
+                            <md-icon>code</md-icon>Source code
+                        </a>
+                    </md-menu>
+                </div>
+            </div>
+        </md-toolbar>
+
+        <div class="app-content">
+            <router-outlet></router-outlet>
+        </div>
+
+        <footer class="page-footer orange">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Company Bio</h5>
+                <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+              </div>
+              <div class="col l3 s12">
+                <h5 class="white-text">Settings</h5>
+                <ul>
+                  <li><a class="white-text" href="#!">Link 1</a></li>
+                  <li><a class="white-text" href="#!">Link 2</a></li>
+                  <li><a class="white-text" href="#!">Link 3</a></li>
+                  <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+              <div class="col l3 s12">
+                <h5 class="white-text">Connect</h5>
+                <ul>
+                  <li><a class="white-text" href="#!">Link 1</a></li>
+                  <li><a class="white-text" href="#!">Link 2</a></li>
+                  <li><a class="white-text" href="#!">Link 3</a></li>
+                  <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+</md-sidenav-container>

@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.page-card-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media ($xsmall) {
+        justify-content: center;
+    }
+
+    .mat-card {
+        width: 350px;
+    }
+}
